@@ -1,1 +1,0 @@
-# edge-energy-test-natgeo

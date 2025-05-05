@@ -1,0 +1,23 @@
+---
+name: Edge - National Geographic
+author: Gladysfotsa <gladysfotsa99@gmail.com>
+description: Benchmarking Edge loading National Geographic for 5 minutes
+
+architecture: Linux
+
+services:
+  edge-container:
+    image: gladysfotsa/edge_energy_image
+    environment:
+      URL_TO_VISIT: "https://www.nationalgeographic.com"
+    command: /usr/local/bin/edge-entry.sh
+
+flow:
+  - name: Load National Geographic in Edge
+    container: edge-container
+    commands:
+      - type: console
+        command: echo "Opening National Geographic with Edge..."
+      - type: console
+        command: sleep 300
+        note: Wait for Edge to run and render the page for 5 minutes
